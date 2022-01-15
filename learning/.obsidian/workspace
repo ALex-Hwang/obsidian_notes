@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "92b86c4e70ae4015",
+    "type": "split",
+    "children": [
+      {
+        "id": "504242856ebb476a",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9bf88d15e89b5b3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b6b27bd52c4412d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45134365365c53d1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "93d312fb55115794",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 197
+  },
+  "right": {
+    "id": "14fd9fd67ffd76ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c3f9a6e6d5fafc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "53c9b2cbc6e93238",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "504242856ebb476a",
+  "lastOpenFiles": [
+    "无锡计划.md",
+    "Roadmap.md",
+    "Segmentation.md",
+    "Classification.md",
+    "VocabBuilder.md"
+  ]
+}
