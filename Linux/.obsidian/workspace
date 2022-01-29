@@ -1,27 +1,15 @@
 {
   "main": {
-    "id": "92b86c4e70ae4015",
+    "id": "557ceb0aa7d028f5",
     "type": "split",
     "children": [
       {
-        "id": "44e6e6648a6dfaba",
+        "id": "b6823590b661ad5a",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Roadmap.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "6631a35ed842b888",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "U-Net.md",
+            "file": "Terminology.md",
             "mode": "source",
             "source": false
           }
@@ -31,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9bf88d15e89b5b3b",
+    "id": "cc053d5d210dff89",
     "type": "split",
     "children": [
       {
-        "id": "9b6b27bd52c4412d",
+        "id": "0f3465bea17eb862",
         "type": "tabs",
         "children": [
           {
-            "id": "45134365365c53d1",
+            "id": "bcc2c191ac942ba6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -47,7 +35,7 @@
             }
           },
           {
-            "id": "93d312fb55115794",
+            "id": "60d3e4398666754b",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,23 +53,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 197
+    "width": 169.5
   },
   "right": {
-    "id": "14fd9fd67ffd76ed",
+    "id": "89dfeb2e2f21c53a",
     "type": "split",
     "children": [
       {
-        "id": "9c3f9a6e6d5fafc4",
+        "id": "85245c0d31ca70ba",
         "type": "tabs",
         "children": [
           {
-            "id": "53c9b2cbc6e93238",
+            "id": "190d68c66b99d6a7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "U-Net.md",
+                "file": "Terminology.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,14 +87,8 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6631a35ed842b888",
+  "active": "b6823590b661ad5a",
   "lastOpenFiles": [
-    "U-Net.md",
-    "Roadmap.md",
-    "Segmentation.md",
-    "Untitled.md",
-    "无锡计划.md",
-    "Classification.md",
-    "VocabBuilder.md"
+    "Terminology.md"
   ]
 }
