@@ -6,7 +6,8 @@
 
 1. [[U-Net]]
 	1. Nested U-Net
-2. Attention-based models
+2. HarDNet-MSEG
+3. Attention-based models
 
 
 ## Metrics
