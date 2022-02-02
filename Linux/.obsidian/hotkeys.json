@@ -44,9 +44,9 @@
   "workspace:split-vertical": [
     {
       "modifiers": [
-        "Ctrl"
+        "Mod"
       ],
-      "key": "V"
+      "key": "X"
     }
   ]
 }
