@@ -1,0 +1,52 @@
+{
+  "editor:focus-top": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "K"
+    }
+  ],
+  "editor:insert-link": [],
+  "editor:focus-bottom": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "J"
+    }
+  ],
+  "editor:focus-left": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "H"
+    }
+  ],
+  "editor:open-search-replace": [],
+  "editor:focus-right": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "L"
+    }
+  ],
+  "workspace:split-horizontal": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ],
+  "workspace:split-vertical": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "X"
+    }
+  ]
+}
