@@ -7,8 +7,12 @@
         "id": "d6eb0f2a038e62cb",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Untitled.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -83,5 +88,7 @@
     "collapsed": true
   },
   "active": "d6eb0f2a038e62cb",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Untitled.md"
+  ]
 }
