@@ -4,24 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "b6823590b661ad5a",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Ch3. System Programming Concepts.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
         "id": "121a4e957417164a",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch4. FILE IO.md",
+            "file": "Ch5. FILE IO Further Details.md",
             "mode": "source",
             "source": false
           }
@@ -65,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 169.5
+    "width": 169.5,
+    "collapsed": true
   },
   "right": {
     "id": "89dfeb2e2f21c53a",
@@ -81,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch4. FILE IO.md",
+                "file": "Ch5. FILE IO Further Details.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,8 +90,8 @@
   },
   "active": "121a4e957417164a",
   "lastOpenFiles": [
-    "Ch4. FILE IO.md",
     "Ch5. FILE IO Further Details.md",
+    "Ch4. FILE IO.md",
     "Ch3. System Programming Concepts.md"
   ]
 }
