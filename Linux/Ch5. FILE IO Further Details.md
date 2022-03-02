@@ -95,3 +95,56 @@ To ensure we always get the file descriptor we want, we can use *dup2()*;
 ```c
 int dup2(int oldfd, int newfd);
 ```
+
+If the *newfd* specified is used, *dup2()* closes it at first. (Any error that occcurs during this close is silently ignored.)
+
+A further interface using *fcntl()* using `F_DUPFD`:
+```c
+newfd = fcntl(oldfd, F_DUPFD, startfd);
+```
+
+The duplicate is made using the lowest unused file descriptor greater than or equal to *startfd*, which provides a guarantee that the new fd falls in a certain range.
+
+### dup3()
+The dup3() system call performs the same task as dup2(), but adds an additional
+argument, flags, that is a bit mask that modifies the behavior of the system call.
+
+It can only set the [[O_CLOEXEC explained]] flag.
+
+```c
+#define _GNU_SOURCE
+#include <unistd.h>
+
+int dup3(int oldfd, int newfd, int flags);
+```
+
+
+## *pread()* and *pwrite()*
+
+*read()* and *write()* at a specified offset, without changing the file offset.
+
+```c
+#include <unistd.h>
+ssize_t pread(int fd, void *buf, size_t count, off_t offset);
+// Returns number of bytes read, 0 on EOF, or –1 on error
+ssize_t pwrite(int fd, const void *buf, size_t count, off_t offset);
+// Returns number of bytes written, or –1 on error
+```
+
+> the file referred to by *fd* must be seakable.
+
+The *pread()* and *pwrite()* is similar to using *read()*/*write()* and *lseek()*, but they offer a performance advantage.
+
+
+
+## *readv()* and *writev()*
+which perform  **scatter-gather** I/O.
+
+```c
+#include <sys/uio.h>
+ssize_t readv(int fd, const struct iovec *iov, int iovcnt);
+// Returns number of bytes read, 0 on EOF, or –1 on error
+ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
+// Returns number of bytes written, or –1 on error
+```
+
