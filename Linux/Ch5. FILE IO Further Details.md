@@ -148,3 +148,105 @@ ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
 // Returns number of bytes written, or –1 on error
 ```
 
+Each element of *iov* is a structure of the following form:
+```c
+struct iovec {
+	void *iov_base; // start address of buffer
+	size_t iov_len; // number of bytes to transfer to/from buffer
+}
+```
+
+![[iovec.png]]
+
+### scatter input
+The *readv()* system call performs *scatter input*: it reads a contiguous sequence of bytes from the file referred to by the file descriptor into the buffers specified by *iov*.
+
+> Note: Each of the buffer is completely filled before *readv()* proceeds to the next buffer.
+
+Performing scatter input with *readv()*
+```c
+#include <sys/stat.h>
+#include <sys/uio.h>
+#include <fcntl.h>
+#include "tlpi_hdr.h"
+
+#define STR_SIZE 100
+
+int main(int argc, char *argv[])
+{
+    int fd;
+    struct iovec iov[3];
+    struct stat myStruct; /* First buffer */
+    int x; /* Second buffer */
+    char str[STR_SIZE]; /*Third buffer*/
+    ssize_t numRead, totRequired;
+
+	if (argc != 2 || strcmp(argv[1], "--help") == 0) 
+		usageErr("%s file\n", argv[0]);
+
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	    errExit("open");
+
+	totRequired = 0;
+
+	iov[0].iov_base = &myStruct;
+	iov[0].iov_len = sizeof(struct stat);
+	totRequired += iov[0].iov_len;
+
+	iov[1].iov_base = &x;
+	iov[1].iov_len = sizeof(x);
+	totRequired += iov[1].iov_len;
+
+	iov[2].iov_base = str;
+	iov[2].iov_len = STR_SIZE;
+	totRequired += iov[2].iov_len;
+
+	numRead = readv(fd, iov, 3);
+	if (numRead == -1)
+	    errExit("readv");
+
+	if (numRead < totRequired)
+		printf("Read fewer bytes than requested\n");
+
+	printf("total bytes requested: %ld; bytes read: %ld\n", (long) totRequired, (long) numRead);
+	exit(EXIT_SUCCESS);
+}
+```
+
+
+### Gather output
+The *writev()* system call performs *gather output*. It concatenates data from all of the buffers specified by *iov* and writes them as a sequence of contiguous bytes to the file referred to by the fd.
+
+### Performing scatter-gather I/O at a specified offset
+
+```c
+#define _BSD_SOURCE
+#include <sys/uio.h>
+
+ssize_t preadv(int fd, const struct iovec *iov, int iovcnt, off_t offset);
+//Returns number of bytes read, 0 on EOF, or –1 on error
+
+ssize_t pwritev(int fd, const struct iovec *iov, int iovcnt, off_t offset);
+//Returns number of bytes written, or –1 on error
+```
+
+
+## *truncate()* and *ftruncate()*
+The *truncate()* and *ftruncate()* system calls set the size of a file to the value specified by *length*.
+
+```c
+#include <unistd.h>
+int truncate(const char *pathname, off_t length); 
+
+int ftruncate(int fd, off_t length);
+
+// Both return 0 on success, or –1 on error
+```
+
+The *ftruncate()* system call takes a descriptor for a file that has **been opened for writing**. It doesn't change the file offset for the file.
+
+
+> The *truncate()* system call is the only system call that can change the contents of a file without first obtaining a descriptor for the file via *open()*.
+
+## Nonblocking I/O

@@ -4,18 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "44e6e6648a6dfaba",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Segmentation.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
         "id": "6631a35ed842b888",
         "type": "leaf",
         "state": {
@@ -81,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Segmentation.md",
+                "file": "U-Net.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,11 +87,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "44e6e6648a6dfaba",
+  "active": "6631a35ed842b888",
   "lastOpenFiles": [
+    "U-Net.md",
     "Segmentation.md",
     "Roadmap.md",
-    "U-Net.md",
     "Untitled.md",
     "无锡计划.md",
     "Classification.md",
