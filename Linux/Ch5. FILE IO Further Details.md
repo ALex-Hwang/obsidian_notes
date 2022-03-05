@@ -250,3 +250,116 @@ The *ftruncate()* system call takes a descriptor for a file that has **been open
 > The *truncate()* system call is the only system call that can change the contents of a file without first obtaining a descriptor for the file via *open()*.
 
 ## Nonblocking I/O
+**O_NONBLOCK**
+Some concepts:
+- FIFO
+- sockets
+- pipes
+
+More will be covered in chapter 63.
+
+
+## I/O on large files
+The *off_t* data type used to hold a file offset is typically implemented as a signed long integer.
+
+We can write applications requiring LFS functionality in one of the two ways:
+- Use an alternative API that supports large files.
+- Define the \_FILE_OFFSET_BITS macro with the value 64 when compiling our programs. (which is the preferred approach)
+
+
+### The transitional LFS API
+
+To use the transitional LFS API, we must define the **\_LARGEFILE64_SOURCE** feature test macro when compiling our program, **either on the command line, or within the source file before including any header files.**
+
+By doing above, we are provided functions capable of handling 64-bit file sizes and offsets, which are:
+- *fopen64()*
+- *open64()*
+- *lseek64()*
+- *truncate64()*
+- *stat64()*
+- *mmap64()*
+- *setrlimit64()*
+
+and also the data types:
+- *struct stat64*
+- *off64_t*
+
+### The \_FILE_OFFSET_BITS macro
+Define the macron \_FILE_OFFSET_BITS with the value 64 when compiling a program. Two ways to do this:
+- `$ cc -D_FILE_OFFSET_BITS=64 prog.c`
+- `#define _FILE_OFFSET_BITS 64` before including any header files.
+
+### Passing *off_t* values to printf
+Use `long long`, since it is 64-bit.
+
+```c
+#define _FILE_OFFSET_BITS 64
+
+off_t offset;        /* Will be 64 bits, the size of 'long long' */
+
+/* Other code assigning a value to 'offset' */
+
+printf("offset=%lld\n", (long long) offset);
+```
+
+
+
+## The /dev/fd Directory
+This directory contains filenmaes of the form `/dev/fd/n`, where *n* is a number corresponding to one of the open file descriptors for the process.
+
+> /dev/fd is actually a symbolic link to the Linux-specific `/proc/self/fd` directory.
+The latter directory is a special case of the Linux-specific `/proc/PID/fd` directo-
+ries, each of which contains symbolic links corresponding to all of the files
+held open by a process.
+
+
+## Creating Temporary Files
+The GNU C library provides a range of library functions for temporary files, two will be discussed here:
+- *mkstemp()*
+- *tmpfile()*
+
+### mkstemp()
+
+The function generates a unique filename based on a template supplied by the caller and opens the file, returning a file descriptor that can be used with I/O system calls.
+
+```c
+#include<stdlib.h>
+
+int mkstemp(char *template);
+
+// Returns file descriptor on success, or -1 on error.
+```
+
+
+The `template` argument takes the form of a pathname in which the last 6 characters must be XXXXXX; and this modified string is returned via the `template` argument.
+
+```c
+int fd;
+char template[] = "/tmp/somestringXXXXXX";
+
+fd = mkstemp(template);
+if (fd == -1)
+	errExit("mkstemp");
+
+printf("Generated filename was: %s\n", template);
+unlink(template);    /* Name disappears immediately, but the file
+				     is removed only after close() */
+
+
+/* Use file I/O system calls - read(), write(), and so on */
+
+if (close(fd) == -1)
+	errExit("close");
+```
+
+### tmpfile()
+The function creates a uniquely named temporary file that is opened for reading and writing.
+
+```c
+#include<stdio.h>
+
+FILE *tempfile(void)
+						//Returns file pointeer on success, or NULL on error.
+```
+
+## Exercises

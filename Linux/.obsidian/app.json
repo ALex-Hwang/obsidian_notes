@@ -4,5 +4,7 @@
   "showLineNumber": true,
   "vimMode": true,
   "spellcheck": true,
-  "defaultViewMode": "source"
+  "defaultViewMode": "source",
+  "autoPairMarkdown": false,
+  "promptDelete": false
 }
