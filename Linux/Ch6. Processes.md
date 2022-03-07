@@ -128,4 +128,48 @@ int puenv(char *string);
 // Returns 0 on success, or nonzero on error
 ```
 
-> The *string* argument is a pointer to a string of the form *name=value*.
+> The *string* argument is a pointer to a string of the form *name=value*. The *glibc* implementation of *putenv()* provides a nonstandard extension: If *string* doesn't contain an equal sign, then the environment variable identified by *string*  is removed from the environment list.
+
+
+### setenv()
+
+```c
+#include <stdlib.h>
+
+int setenv(const char *name, const char *value, int overwrite);
+
+// Returns 0 on success, or -1 on error.
+```
+
+> The function doesn't change the environment if the variable identified by *name* already exists and *overwrite* has the value 0.
+
+### unsetenv()
+
+```c
+#include <stdlib.h>
+
+int unsetenv(const char *name);
+
+// Returns 0 on sucess, or -1 on error.
+```
+
+### clearenv()
+
+Sometimes it is useful to erase the entire environment, by doing `environ = NULL`, which is exactly what *clearenv()* is doing: 
+
+```c
+#define _BSD_SOURCE
+#include <stdlib.h>
+
+int clearenv(void);
+
+// Returns 0 on success, or a nonzero on error.
+```
+
+### example
+
+![[modifyEnv.png]]
+
+
+## Performing a Nonlocal Goto: *setjmp()* and *longjmp()*
+
