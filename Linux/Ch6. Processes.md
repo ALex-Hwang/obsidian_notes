@@ -173,3 +173,29 @@ int clearenv(void);
 
 ## Performing a Nonlocal Goto: *setjmp()* and *longjmp()*
 
+> The term *nonlocal* refers to the fact that the target of the goto is a location somewhere outside the currently executing function.
+
+may be useful in error handling.
+
+```c
+#include <setjmp.h>
+
+int setjmp(jmp_buf env);
+// Returns 0 on initial call, nonzero on return via longjmp().
+
+void longjmp(jmp_buf env, int val);
+```
+
+### Restrictions on the use of *setjmp(*)
+SUSv3 and C99 specify that a call to *setjmp()* may appear only in the following contexts:
+- as the entire controlling expression of a selection or iteration statement (if, switch, while, and so on);
+- as the operand of a unary ! (not) operator, where the resulting expression is the entire controlling expression of a selection or iteration statement;
+- as part of a comparison operation ( \==, !=, <, and so on), where the other operand is an integer constant expression and the resulting expression is the entire controlling expression of a selection or iteration statement; or
+- as a free-standing function call that is not embedded inside some larger expression.
+
+For example, a statement of the following form is not standards-conformant:
+`s = setjmp(env); /* WRONG */`
+
+### Abusing *longjmp()*
+
+> We can't do a *longjmp()* into a function that has already returned.
