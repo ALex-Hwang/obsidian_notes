@@ -199,3 +199,14 @@ For example, a statement of the following form is not standards-conformant:
 ### Abusing *longjmp()*
 
 > We can't do a *longjmp()* into a function that has already returned.
+
+
+### Problems with optimizing compilers
+
+Optimizing compilers may rearrange the order of instructions in a program and store certain variables in CPU registers, rather than RAM, which may make optimized variables end up with incorrect values.
+
+> Use *volatile* or *-Wextra* when compiling 
+
+
+## Exercises
+
