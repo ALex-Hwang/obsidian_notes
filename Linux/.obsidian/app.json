@@ -6,5 +6,8 @@
   "spellcheck": true,
   "defaultViewMode": "source",
   "autoPairMarkdown": false,
-  "promptDelete": false
+  "promptDelete": false,
+  "spellcheckLanguages": [
+    "en-US"
+  ]
 }
