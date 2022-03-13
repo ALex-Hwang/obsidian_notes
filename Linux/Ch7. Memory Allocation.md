@@ -140,3 +140,47 @@ if (nptr == NULL) {
 
 They are designed to allocate memory starting at an address aligned at a specified power-of-two boundary, a feature useful for some applications.
 
+```c
+#include <malloc.h>
+
+void *memalign(size_t boundary, size_t size);
+// Returns pointer to allocated memory on success, or NULL on error
+```
+
+The *memalign()* function allocates *size* bytes starting at **an address aligned to a multiple of *boundary***, which must be a power of two. 
+
+```c
+#include <stdlib.h>
+
+int posix_memalign(void **memptr, size_t alignment, size_t size);
+// Returns 0 on success, or a positive error number on error.
+```
+
+> Blocks of memory allocated using *memalign()* or *posix_memalign()* should be deallocated with *free()*.
+
+
+## Allocating Memory on the Stack: *alloca()*
+
+*alloca()* obtains memory from the stack by increasing the size of the stack frame.
+
+```c
+#include <alloca.h>
+
+void *alloca(size_t size);
+// Returns pointer to allocated block of memory.
+```
+
+> We need not call *free()* to deallocate memory allocated with *alloca()*. Likewise, it is not possible to use realloc() to resize a block of memory allocated by *alloca()*.
+
+We should not use *alloca*()* within a function argument list, we should code such as this:
+```c
+void *y;
+
+y = alloca(size);
+func(x, y, z);
+```
+
+### Advantages:
+- faster than *malloc()*
+- The memory allocated is automatically freed.
+- It can be especially useful if we employ [[Ch6. Processes#Performing a Nonlocal Goto setjmp and longjmp | longjmp()]] or *siglongjmp()* to perform a  nonlocal go to from a signal handler.

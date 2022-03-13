@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 169.5,
-    "collapsed": true
+    "width": 169.5
   },
   "right": {
     "id": "89dfeb2e2f21c53a",
@@ -91,8 +90,8 @@
   "active": "121a4e957417164a",
   "lastOpenFiles": [
     "Ch7. Memory Allocation.md",
-    "O_CLOEXEC explained.md",
     "Ch6. Processes.md",
+    "O_CLOEXEC explained.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
     "Ch3. System Programming Concepts.md",
