@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "121a4e957417164a",
+        "id": "c56e2cdcfd99be9c",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch7. Memory Allocation.md",
+            "file": "Ch8. Users and Groups.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 169.5
+    "width": 169.5,
+    "collapsed": true
   },
   "right": {
     "id": "89dfeb2e2f21c53a",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch7. Memory Allocation.md",
+                "file": "Ch8. Users and Groups.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,11 +88,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "121a4e957417164a",
+  "active": "c56e2cdcfd99be9c",
   "lastOpenFiles": [
+    "Ch8. Users and Groups.md",
     "Ch7. Memory Allocation.md",
-    "Ch6. Processes.md",
     "O_CLOEXEC explained.md",
+    "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
     "Ch3. System Programming Concepts.md",
