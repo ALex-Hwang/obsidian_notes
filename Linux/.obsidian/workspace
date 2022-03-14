@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "c56e2cdcfd99be9c",
+        "id": "121a4e957417164a",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -88,12 +88,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c56e2cdcfd99be9c",
+  "active": "121a4e957417164a",
   "lastOpenFiles": [
     "Ch8. Users and Groups.md",
     "Ch7. Memory Allocation.md",
-    "O_CLOEXEC explained.md",
     "Ch6. Processes.md",
+    "O_CLOEXEC explained.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
     "Ch3. System Programming Concepts.md",
