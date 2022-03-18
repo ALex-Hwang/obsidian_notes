@@ -24,3 +24,17 @@ chmod g+s prog # turn on set-group-ID permission bit
 ```
 
 ## Saved Set-User-ID and Saved-Group ID
+By using which, he program can temporarily drop and regain whatever privileges are associated with the user (group) ID of the execed file.
+
+## File-System User ID and File-System Group ID
+It is file-system user and group ID that determine permissions when performing file-system  operations such as opening files, changing file ownership, and modifying file permissions.
+
+You can use *setfsuid()* and *setfsgid()* to explicitly make them different.
+
+## Retrieving and Modifying Process Credentials
+Two capabilities are relevant of all of the system calls used to change process user and group IDs:
+- `CAP_SETUID` capability allows a process to make arbitrary changes to its user IDs.
+- `CAP_SETGID` capability allows a process to make arbitrary changes to its group IDs.
+
+### Retrieving and Modifying Real, Effective, and Saved Set IDs
+
