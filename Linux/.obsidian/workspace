@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch9. Process Credentials.md",
+            "file": "Ch7. Memory Allocation.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 169.5,
-    "collapsed": true
+    "width": 169.5
   },
   "right": {
     "id": "89dfeb2e2f21c53a",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch9. Process Credentials.md",
+                "file": "Ch7. Memory Allocation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,11 +89,12 @@
   },
   "active": "121a4e957417164a",
   "lastOpenFiles": [
-    "Ch9. Process Credentials.md",
-    "Ch8. Users and Groups.md",
     "Ch7. Memory Allocation.md",
-    "Ch6. Processes.md",
+    "Ch8. Users and Groups.md",
+    "Ch9. Process Credentials.md",
     "O_CLOEXEC explained.md",
+    "Pasted image 20220312144657.png",
+    "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
     "Ch3. System Programming Concepts.md",
