@@ -9,11 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "Ch7. Memory Allocation.md",
-=======
             "file": "Ch10. TIME.md",
->>>>>>> 596fcd0ea1a47ef20a79adb980218073898c1f56
             "mode": "source",
             "source": false
           }
@@ -57,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 169.5
+    "width": 169.5,
+    "collapsed": true
   },
   "right": {
     "id": "89dfeb2e2f21c53a",
@@ -73,11 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "Ch7. Memory Allocation.md",
-=======
                 "file": "Ch10. TIME.md",
->>>>>>> 596fcd0ea1a47ef20a79adb980218073898c1f56
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,12 +90,7 @@
   },
   "active": "121a4e957417164a",
   "lastOpenFiles": [
-<<<<<<< HEAD
-=======
     "Ch10. TIME.md",
-    "Ch9. Process Credentials.md",
-    "Ch8. Users and Groups.md",
->>>>>>> 596fcd0ea1a47ef20a79adb980218073898c1f56
     "Ch7. Memory Allocation.md",
     "Ch8. Users and Groups.md",
     "Ch9. Process Credentials.md",
@@ -111,7 +99,6 @@
     "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
-    "Ch3. System Programming Concepts.md",
-    "iovec.png"
+    "Ch3. System Programming Concepts.md"
   ]
 }
