@@ -4,18 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "ee1000727268b19c",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Roadmap.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
         "id": "5664857c4abbd82e",
         "type": "leaf",
         "state": {
@@ -82,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Roadmap.md",
+                "file": "To do list.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,10 +88,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "ee1000727268b19c",
+  "active": "5664857c4abbd82e",
   "lastOpenFiles": [
-    "Roadmap.md",
     "To do list.md",
+    "Roadmap.md",
     "FPN.md",
     "Faster R-CNN.md",
     "ResNet.md",
