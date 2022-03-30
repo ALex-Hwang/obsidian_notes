@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "776863d5833be925",
+        "id": "121a4e957417164a",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch11. System Limits and Options.md",
+            "file": "Ch12. System and Process Information.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch11. System Limits and Options.md",
+                "file": "Ch12. System and Process Information.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "776863d5833be925",
+  "active": "121a4e957417164a",
   "lastOpenFiles": [
+    "Ch12. System and Process Information.md",
     "Ch11. System Limits and Options.md",
     "Ch10. TIME.md",
-    "Ch6. Processes.md",
     "Ch7. Memory Allocation.md",
     "Ch8. Users and Groups.md",
     "Ch9. Process Credentials.md",
     "O_CLOEXEC explained.md",
     "Pasted image 20220312144657.png",
-    "Ch5. FILE IO Further Details.md",
-    "Ch4. FILE IO.md"
+    "Ch6. Processes.md",
+    "Ch5. FILE IO Further Details.md"
   ]
 }
