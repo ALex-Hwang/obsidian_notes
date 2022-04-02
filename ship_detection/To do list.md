@@ -83,3 +83,19 @@ Zheng, Z., Wang, P., Liu, W., Li, J., Ye, R., & Ren, D. (2019). _Distance-IoU Lo
 - [ ] preprocessing
 - [ ] 如何去除图片的纹理
 - [ ] introduction to detectron2
+
+
+
+## 4.1之后
+### To do 
+- [ ] Dataset structure: split the test/validation set
+- [ ] 
+### Roadmap (sorted of)
+1. Trained on the 3-D models, tested on the real-pics
+2. Trained on the real-pics, tested on the real-pics
+3. Trained on both pics (without further process), tested on the real test set
+4. Trained on both pics (with some process: `data sampler`), tested on the real test set (same with above)
+5. Using `GAN` or other techniques.
+
+
+
