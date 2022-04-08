@@ -88,7 +88,7 @@ Zheng, Z., Wang, P., Liu, W., Li, J., Ye, R., & Ren, D. (2019). _Distance-IoU Lo
 
 ## 4.1之后
 ### To do 
-- [ ] Dataset structure: split the test/validation set
+- [x] Dataset structure: split the test/validation set
 - [ ] 
 ### Roadmap (sorted of)
 1. Trained on the 3-D models, tested on the real-pics

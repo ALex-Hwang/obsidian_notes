@@ -54,4 +54,4 @@ Check the [[To do list]].
 OrderedDict([('bbox', {'AP': 86.44436148148843, 'AP50': 97.94543097154414, 'AP75': 97.76494320998246, 'APs': nan, 'APm': 74.99537700764333, 'APl': 86.49708388103564, 'AP-Burke class': 89.48796444421903, 'AP-Village Rain Level': 84.37036109802494, 'AP-Hainan Cargo Ship': 87.46937984435814, 'AP-Izumo level': 91.81086166365087, 'AP-American Grade': 76.19897237679042, 'AP-Ticonderoga': 78.28503016192937, 'AP-Wasp class': 80.71357393921379, 'AP-Brave Level': 94.9714645258837, 'AP-Pohang Level': 94.35919078361687, 'AP-Hainan Rescue Ship': 85.06571196196023, 'AP-Independence Level': 88.1554654967254})])
 ```
 
-
+### Trained on the cg pics and evaluated on the real pics
