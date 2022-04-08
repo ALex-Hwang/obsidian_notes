@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch12. System and Process Information.md",
+            "file": "Ch13. FIlE IO BUFFER.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch12. System and Process Information.md",
+                "file": "Ch13. FIlE IO BUFFER.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "121a4e957417164a",
   "lastOpenFiles": [
+    "Ch13. FIlE IO BUFFER.md",
     "Ch12. System and Process Information.md",
     "Ch11. System Limits and Options.md",
     "Ch10. TIME.md",
@@ -98,7 +99,6 @@
     "Ch9. Process Credentials.md",
     "O_CLOEXEC explained.md",
     "Pasted image 20220312144657.png",
-    "Ch6. Processes.md",
-    "Ch5. FILE IO Further Details.md"
+    "Ch6. Processes.md"
   ]
 }
