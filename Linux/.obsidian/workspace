@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch14. FILE SYSTEM.md",
+            "file": "Ch5. FILE IO Further Details.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch14. FILE SYSTEM.md",
+                "file": "Ch5. FILE IO Further Details.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,8 @@
   },
   "active": "e0f9b57998a2e2ed",
   "lastOpenFiles": [
+    "Ch5. FILE IO Further Details.md",
+    "Ch4. FILE IO.md",
     "Ch14. FILE SYSTEM.md",
     "Ch13. FIlE IO BUFFER.md",
     "Ch12. System and Process Information.md",
@@ -97,8 +99,6 @@
     "Ch10. TIME.md",
     "Ch7. Memory Allocation.md",
     "Ch8. Users and Groups.md",
-    "Ch9. Process Credentials.md",
-    "O_CLOEXEC explained.md",
-    "Pasted image 20220312144657.png"
+    "Ch9. Process Credentials.md"
   ]
 }
