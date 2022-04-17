@@ -84,7 +84,8 @@ OrderedDict([('bbox', {'AP': 3.5081729272994746, 'AP50': 6.506373755269533, 'AP7
 ```
 
 ### Trained and evaluated both on real pics
-```
+#### ResNet 50
+``` 
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.651
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.748
  Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.735
@@ -112,3 +113,62 @@ OrderedDict([('bbox', {'AP': 3.5081729272994746, 'AP50': 6.506373755269533, 'AP7
 OrderedDict([('bbox', {'AP': 65.0512104033142, 'AP50': 74.82302289801919, 'AP75': 73.520643982879, 'APs': nan, 'APm': nan, 'APl': 65.0512104033142, 'AP-America': 40.059720257740054, 'AP-Burke': 62.985619990570484, 'AP-Daring': 79.03818953323903, 'AP-Independence': 87.62376237623762, 'AP-Izumo': 67.41107444077741, 'AP-Murasame': 78.29677704612565, 'AP-Pohang': 43.091368919500646, 'AP-Ticonderoga': 82.7145214521452, 'AP-Wasp': 44.239859613491724, 'AP-Hainan Rescue': nan, 'AP-Hainan Cargo': nan})])
 ```
 =======
+
+#### ResNet 101
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.663
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.748
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.748
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.663
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.800
+[04/15 10:39:18 d2.evaluation.coco_evaluation]: Evaluation results for bbox: 
+|   AP   |  AP50  |  AP75  |  APs  |  APm  |  APl   |
+|:------:|:------:|:------:|:-----:|:-----:|:------:|
+| 66.314 | 74.824 | 74.824 |  nan  |  nan  | 66.314 |
+[04/15 10:39:18 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[04/15 10:39:18 d2.evaluation.coco_evaluation]: Per-category bbox AP: 
+| category      | AP     | category     | AP     | category   | AP     |
+|:--------------|:-------|:-------------|:-------|:-----------|:-------|
+| America       | 44.554 | Burke        | 60.317 | Daring     | 63.564 |
+| Independence  | 85.495 | Izumo        | 67.921 | Murasame   | 77.898 |
+| Pohang        | 55.361 | Ticonderoga  | 95.248 | Wasp       | 46.465 |
+| Hainan Rescue | nan    | Hainan Cargo | nan    |            |        |
+OrderedDict([('bbox', {'AP': 66.3136441849313, 'AP50': 74.82380106142482, 'AP75': 74.82380106142482, 'APs': nan, 'APm': nan, 'APl': 66.3136441849313, 'AP-America': 44.554455445544555, 'AP-Burke': 60.316831683168324, 'AP-Daring': 63.56435643564357, 'AP-Independence': 85.49504950495049, 'AP-Izumo': 67.92079207920793, 'AP-Murasame': 77.8977623037029, 'AP-Pohang': 55.36067892503536, 'AP-Ticonderoga': 95.24752475247524, 'AP-Wasp': 46.46534653465347, 'AP-Hainan Rescue': nan, 'AP-Hainan Cargo': nan})])
+```
+
+#### retinanet_R_101_FPN_3x.yaml
+
+```
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.663
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.748
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.748
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.663
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.800
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.800
+[04/15 11:00:30 d2.evaluation.coco_evaluation]: Evaluation results for bbox: 
+|   AP   |  AP50  |  AP75  |  APs  |  APm  |  APl   |
+|:------:|:------:|:------:|:-----:|:-----:|:------:|
+| 66.314 | 74.824 | 74.824 |  nan  |  nan  | 66.314 |
+[04/15 11:00:30 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[04/15 11:00:30 d2.evaluation.coco_evaluation]: Per-category bbox AP: 
+| category      | AP     | category     | AP     | category   | AP     |
+|:--------------|:-------|:-------------|:-------|:-----------|:-------|
+| America       | 44.554 | Burke        | 60.317 | Daring     | 63.564 |
+| Independence  | 85.495 | Izumo        | 67.921 | Murasame   | 77.898 |
+| Pohang        | 55.361 | Ticonderoga  | 95.248 | Wasp       | 46.465 |
+| Hainan Rescue | nan    | Hainan Cargo | nan    |            |        |
+OrderedDict([('bbox', {'AP': 66.3136441849313, 'AP50': 74.82380106142482, 'AP75': 74.82380106142482, 'APs': nan, 'APm': nan, 'APl': 66.3136441849313, 'AP-America': 44.554455445544555, 'AP-Burke': 60.316831683168324, 'AP-Daring': 63.56435643564357, 'AP-Independence': 85.49504950495049, 'AP-Izumo': 67.92079207920793, 'AP-Murasame': 77.8977623037029, 'AP-Pohang': 55.36067892503536, 'AP-Ticonderoga': 95.24752475247524, 'AP-Wasp': 46.46534653465347, 'AP-Hainan Rescue': nan, 'AP-Hainan Cargo': nan})])
+```
