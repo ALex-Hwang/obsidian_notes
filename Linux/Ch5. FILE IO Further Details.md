@@ -374,4 +374,6 @@ The file is opened in append mode. Before each write(2), the file offset is posi
 
 If you want to write data the end of the file and then the beginning of it later, open it up without `O_APPEND`.
 
-3. 
+3. This exercise demonstrates why the atomicity guaranteed by opening a file with the `O_APPEND` flag is necessary.
+
+
