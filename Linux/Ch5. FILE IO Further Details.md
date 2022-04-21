@@ -368,7 +368,7 @@ FILE *tempfile(void)
 From the `open(2)` documentation:
 > `O_APPEND`  
 O_APPEND
-The file is opened in append mode. Before each write(2), the file offset is positioned at the end of the file, as if with lseek(2).> The file is opened in append mode. Before each `write(2)`, the file offset is positioned at the end of the file, as if with `lseek(2)`.
+The file is opened in append mode. Before each write(2), the file offset is positioned at the end of the file, as if with lseek(2). The file is opened in append mode. Before each `write(2)`, the file offset is positioned at the end of the file, as if with `lseek(2)`.
 
 If you want to write data the end of the file and then the beginning of it later, open it up without `O_APPEND`.
 
