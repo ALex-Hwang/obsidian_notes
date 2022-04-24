@@ -172,3 +172,45 @@ OrderedDict([('bbox', {'AP': 66.3136441849313, 'AP50': 74.82380106142482, 'AP75'
 | Hainan Rescue | nan    | Hainan Cargo | nan    |            |        |
 OrderedDict([('bbox', {'AP': 66.3136441849313, 'AP50': 74.82380106142482, 'AP75': 74.82380106142482, 'APs': nan, 'APm': nan, 'APl': 66.3136441849313, 'AP-America': 44.554455445544555, 'AP-Burke': 60.316831683168324, 'AP-Daring': 63.56435643564357, 'AP-Independence': 85.49504950495049, 'AP-Izumo': 67.92079207920793, 'AP-Murasame': 77.8977623037029, 'AP-Pohang': 55.36067892503536, 'AP-Ticonderoga': 95.24752475247524, 'AP-Wasp': 46.46534653465347, 'AP-Hainan Rescue': nan, 'AP-Hainan Cargo': nan})])
 ```
+
+
+#### Faster-RCNN 
+
+```python
+cfg.DATALOADER.NUM_WORKERS = 2
+cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-Detection/retinanet_R_101_FPN_3x.yaml")  # Let training initialize from model zoo
+cfg.SOLVER.IMS_PER_BATCH = 4
+cfg.SOLVER.BASE_LR = 0.00015  # pick a good LR
+cfg.SOLVER.MAX_ITER = 5000
+cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
+cfg.MODEL.ROI_HEADS.NUM_CLASSES = 11
+os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
+```
+
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.705
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.764
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.738
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.706
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.903
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.903
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.903
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.903
+[04/23 21:33:10 d2.evaluation.coco_evaluation]: Evaluation results for bbox: 
+|   AP   |  AP50  |  AP75  |  APs  |  APm  |  APl   |
+|:------:|:------:|:------:|:-----:|:-----:|:------:|
+| 70.499 | 76.411 | 73.844 |  nan  |  nan  | 70.590 |
+[04/23 21:33:10 d2.evaluation.coco_evaluation]: Some metrics cannot be computed and is shown as NaN.
+[04/23 21:33:10 d2.evaluation.coco_evaluation]: Per-category bbox AP: 
+| category      | AP     | category     | AP     | category   | AP     |
+|:--------------|:-------|:-------------|:-------|:-----------|:-------|
+| America       | 56.343 | Burke        | 77.157 | Daring     | 64.422 |
+| Independence  | 82.102 | Izumo        | 81.188 | Murasame   | 86.337 |
+| Pohang        | 49.705 | Ticonderoga  | 94.413 | Wasp       | 42.822 |
+| Hainan Rescue | nan    | Hainan Cargo | nan    |            |        |
+OrderedDict([('bbox', {'AP': 70.4988374295305, 'AP50': 76.41095810488837, 'AP75': 73.8440347458858, 'APs': nan, 'APm': nan, 'APl': 70.5899894018706, 'AP-America': 56.34316178870634, 'AP-Burke': 77.15700141442716, 'AP-Daring': 64.42244224422443, 'AP-Independence': 82.1020563594821, 'AP-Izumo': 81.1881188118812, 'AP-Murasame': 86.33663366336634, 'AP-Pohang': 49.70532767562471, 'AP-Ticonderoga': 94.41301272984441, 'AP-Wasp': 42.82178217821782, 'AP-Hainan Rescue': nan, 'AP-Hainan Cargo': nan})])
+```

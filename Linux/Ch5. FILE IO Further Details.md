@@ -96,7 +96,7 @@ To ensure we always get the file descriptor we want, we can use *dup2()*;
 int dup2(int oldfd, int newfd);
 ```
 
-If the *newfd* specified is used, *dup2()* closes it at first. (Any error that occcurs during this close is silently ignored.)
+If the *newfd* specified is used, *dup2()* closes it at first. (Any error that occurs during this close is silently ignored.)
 
 A further interface using *fcntl()* using `F_DUPFD`:
 ```c
@@ -365,6 +365,31 @@ FILE *tempfile(void)
 ## Exercises
 1. Modify the program in Listing 5-3 to use standard file I/O system calls (open() and lseek()) and the off_t data type. Compile the program with the _FILE_OFFSET_BITS macro set to 64, and test it to show that a large file can be successfully created.
 
+```c
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "tlpi_hdr.h"
+
+int main(int argc, char *argv[]) {
+    int fd;
+    off_t off;
+
+    if (argc != 3 || strcmp(argv[1], "--help") == 0)
+        errExit("%s pathname offset\n", argv[0]);
+
+    fd = open(argv[1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    if (fd == -1)
+        errExit("open");
+
+    off = atoll(argv[2]);
+    if (lseek(fd, off, SEEK_SET) == -1)
+        errExit("lseek");
+
+    if (write(fd, "test", 4) == -1)
+        errExit("write");
+    exit(EXIT_SUCCESS);
+}
+```
 2. Write a program that opens an existing file for writing with the O_APPEND flag, and then seeks to the beginning of the file before writing some data. Where does the data appear in the file? Why?
 
 From the `open(2)` documentation:
@@ -376,4 +401,140 @@ If you want to write data the end of the file and then the beginning of it later
 
 3. This exercise demonstrates why the atomicity guaranteed by opening a file with the `O_APPEND` flag is necessary.
 
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <stdbool.h>
+
+void usage(char *argv[]) {
+    printf("%s takes three or four parameters, x is only checked by arg number."\
+            , argv[0]);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 3 || argc > 4)
+        usage(argv);
+
+    bool useSeek = argc > 3;
+    int flags = useSeek ? 0 : O_APPEND;
+    int number = atoi(argv[2]);
+
+    int fd = open(argv[1], flags , S_IRUSR | S_IWUSR);
+
+    if (fd == -1)
+        exit(1);
+
+    for (int i = 0; i < number; ++i) {
+        if (argc == 3) {
+            write(fd, "x", 1);
+        } else {
+            lseek(fd, 0, SEEK_END);
+            write(fd, "x", 1);
+        }
+    }
+}
+```
+
+4. Implement `dup()` and `dup2()` using `fcntl()`.
+
+```c
+#include <fcntl.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int dup(int oldfd) {
+    if (fcntl(oldfd, F_GETFD, 0) < 0) {
+        errno = EBADF;
+        return -1;
+    }
+    return fcntl(oldfd, F_DUPFD, 0);
+}
+
+int dup2(int oldfd, int newfd) {
+    /* verify if oldfd is valid */
+    if (fcntl(oldfd, F_GETFD, 0) < 0) {
+        errno = EBADF;
+        return -1;
+    }
+
+    /* check if oldfd is equal to newfd */
+    if (newfd == oldfd)
+        return newfd;
+
+    /* check if newfd is being opened */
+    int ret = fcntl(newfd, F_GETFD, 0);
+    if (ret >= 0) {
+        close(newfd);
+    } else if (ret < 0 && errno != EBADF) {
+        return -1;
+    }
+    
+    /* finish rest of the work by fcntl() */
+    return fcntl(oldfd, F_DUPFD, newfd);
+}
+
+int main(int argc, char *argv[]) {
+     
+}
+```
+
+5. Write a program to verify that duplicated file descriptors share a file offset value and open file status flags.
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
+
+void usage() {
+    printf("nothing");    
+}
+
+int main(int argc, char *argv[]) {
+    
+    int fd;
+    int newfd;
+    off_t offset;
+    off_t newoffset;
+    if (argc < 2) {
+        usage();
+        return 0;
+    }
+
+    fd = open(argv[1], O_CREAT | O_RDONLY, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+    offset = lseek(fd, 5, SEEK_SET);      
+
+    newfd = dup(fd);
+    newoffset = lseek(fd, 0, SEEK_CUR);
+
+    if (newoffset == offset)
+        printf("Yes");
+    
+
+}
+```
+
+6. After each of the calls to `write()` in the following code, explain what the content of the output file would be, and why:
+
+```c
+fd1 = open(file, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+fd2 = dup(fd1);
+fd3 = open(file, O_RDWR);
+write(fd1, "Hello,", 6);
+/* Hello, */
+write(fd2, "world", 6);
+/* Hello,world */
+lseek(fd2, 0, SEEK_SET);
+write(fd1, "HELLO,", 6);
+/* HELLO,world */
+write(fd3, "Gidday", 6);
+/* Giddayworld */ 
+```
+
+7. Implement `readv()` and `writev()` using `read()`, `write()`, and suitable functions from the `malloc` package.
 

@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "4f612ed7f4273252",
+        "id": "e0f9b57998a2e2ed",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch5. FILE IO Further Details.md",
+            "file": "Ch14. FILE SYSTEM.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch5. FILE IO Further Details.md",
+                "file": "Ch14. FILE SYSTEM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4f612ed7f4273252",
+  "active": "e0f9b57998a2e2ed",
   "lastOpenFiles": [
+    "Ch14. FILE SYSTEM.md",
+    "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
-    "Ch14. FILE SYSTEM.md",
     "Ch13. FIlE IO BUFFER.md",
     "Ch12. System and Process Information.md",
     "Ch11. System Limits and Options.md",
     "Ch10. TIME.md",
     "Ch7. Memory Allocation.md",
-    "Ch8. Users and Groups.md",
-    "Ch9. Process Credentials.md"
+    "Ch8. Users and Groups.md"
   ]
 }

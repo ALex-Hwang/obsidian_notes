@@ -4,7 +4,7 @@
 A process is an instance of an executing program.
 
 A program is a file containing a range of information:
-- *Binary format identification*: metainformation describing the format of the format of the executable file.
+- *Binary format identification*: meta information describing the format of the format of the executable file.
 - *Machine-language instructions*: encode the algorithm of the program.
 - *Program entry-point address*
 - *Data*: The program file contains values used to initialize variables and also literal constants used by the program.
@@ -24,7 +24,7 @@ pid_t getpid(void);
 ```
 
 > The linux kernel limits process IDs to being less than or equal to 32,767. Each time it reaches the limit, the kernel resets its process ID counter so that process IDs are assigned starting from low integer values.
-1
+
 ```c
 #include<unistd.h>
 
@@ -54,7 +54,7 @@ A special-purpose register, the *stack pointer*, tracks the current top of the s
 
 Each user stack frame contains the following information:
 - *Function arguments and local variables*
-- *Call linkage information*: Each function uses certain CPU registers, such as the program counter, which points to the next machine-language instruction to be executed. Each time one function calls another, a copy of these registers is saved in the called function's frame so that when the function returns, the appropriate register values can be restored for the calling function.
+- *Call linkage information*: Each function uses certain CPU registers, such as the program counter, which points to the next machine-language instruction to be executed. ==Each time one function calls another, a copy of these registers is saved in the called function's frame== so that when the function returns, the appropriate register values can be restored for the calling function.
 
 ![[stack.png]]
 
@@ -83,8 +83,6 @@ Within a C program, the environment list can be accessed using the global variab
 Two ways to process environment:
 1. environ:
 ```c
-#include "tlpi_hdr.h"
-
 extern char **environ;
 
 int main(int argc, char *argv[]) {
@@ -123,7 +121,7 @@ The *putenv()* function adds a new variable to the calling process's environment
 ```c
 #include <stdlib.h>
 
-int puenv(char *string);
+int putenv(char *string);
 
 // Returns 0 on success, or nonzero on error
 ```
@@ -209,4 +207,33 @@ Optimizing compilers may rearrange the order of instructions in a program and st
 
 
 ## Exercises
+1. This is a silly question.
 
+2. Write a program to see what happens if we try to `longjmp()` into a function that has already returned.
+
+3. Implement `setenv()` and `unsetenv()` using `getenv()`, `putenv()`, and when necessary, code that directly modifies `environ`. Your version of `unsetenv()` should check to see whether there are multiple definitions of an environment variable, and remove them all.
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <memory.h>
+
+int ssetenv(const char *name, const char *value, int overwrite) {
+    if (overwrite || getenv(name) == NULL) {
+        char *temp = (char *)malloc(strlen(name)+strlen(value)+2);
+        strcpy(temp, name);
+        strcat(temp, "=");
+        strcat(temp, value);
+        return putenv(temp);
+    }
+    return 0;
+}
+
+int sunsetenv(const char *name) {
+    if (getenv(name) == NULL)
+        return 0;    
+    else
+        return putenv(name);
+}
+```
+
+> Your answer is like shit, refer to [here](https://github.com/posborne/linux-programming-interface-exercises/blob/master/06-processes/myenviron.c)
