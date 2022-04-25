@@ -1,6 +1,8 @@
 {
   "baseFontSize": 14,
   "translucency": false,
-  "cssTheme": "Obsidian Nord",
-  "theme": "obsidian"
+  "cssTheme": "Night Owl",
+  "theme": "obsidian",
+  "monospaceFontFamily": "Source Code Pro",
+  "textFontFamily": "Source Code Pro"
 }
