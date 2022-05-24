@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch 15. File Attributes.md",
+            "file": "Ch 16. Extened Attributes.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch 15. File Attributes.md",
+                "file": "Ch 16. Extened Attributes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +90,15 @@
   },
   "active": "e0f9b57998a2e2ed",
   "lastOpenFiles": [
+    "Ch 16. Extened Attributes.md",
     "Ch 15. File Attributes.md",
+    "Ch9. Process Credentials.md",
     "Ch14. FILE SYSTEM.md",
     "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
     "Ch13. FIlE IO BUFFER.md",
     "Ch12. System and Process Information.md",
-    "Ch11. System Limits and Options.md",
-    "Ch10. TIME.md",
-    "Ch7. Memory Allocation.md"
+    "Ch11. System Limits and Options.md"
   ]
 }
