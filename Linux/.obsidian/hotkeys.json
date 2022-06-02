@@ -49,5 +49,6 @@
       "key": "X"
     }
   ],
-  "file-explorer:move-file": []
+  "file-explorer:move-file": [],
+  "editor:insert-embed": []
 }
