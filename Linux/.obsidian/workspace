@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch17. Access Control List.md",
+            "file": "Ch18. Directories and Links.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch17. Access Control List.md",
+                "file": "Ch18. Directories and Links.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "e0f9b57998a2e2ed",
   "lastOpenFiles": [
+    "Ch18. Directories and Links.md",
     "Ch17. Access Control List.md",
     "Ch 16. Extened Attributes.md",
     "Ch 15. File Attributes.md",
@@ -98,7 +99,6 @@
     "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
     "Ch4. FILE IO.md",
-    "Ch13. FIlE IO BUFFER.md",
-    "Ch12. System and Process Information.md"
+    "Ch13. FIlE IO BUFFER.md"
   ]
 }
