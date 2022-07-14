@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Ch18. Directories and Links.md",
+            "file": "Ch19. Monitoring File Events.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ch18. Directories and Links.md",
+                "file": "Ch19. Monitoring File Events.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "e0f9b57998a2e2ed",
   "lastOpenFiles": [
+    "Ch19. Monitoring File Events.md",
     "Ch18. Directories and Links.md",
     "Ch17. Access Control List.md",
     "Ch 16. Extened Attributes.md",
@@ -98,7 +99,6 @@
     "Ch14. FILE SYSTEM.md",
     "Ch6. Processes.md",
     "Ch5. FILE IO Further Details.md",
-    "Ch4. FILE IO.md",
-    "Ch13. FIlE IO BUFFER.md"
+    "Ch4. FILE IO.md"
   ]
 }
